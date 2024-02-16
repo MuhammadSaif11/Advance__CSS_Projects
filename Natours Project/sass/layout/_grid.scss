@@ -1,0 +1,12 @@
+.row{
+    max-width: $grid-width;
+    margin: 0 auto;
+    background-color: #eee;
+
+    
+    &:not(:last-child){
+        margin-right: $gutter-horizontal;
+    }
+    
+    @include clearfix;
+}
