@@ -17,7 +17,7 @@ html{
     }
 
     @include respond(phone-xl-big){
-        font-size: 40.75%;
+        font-size: 50%;
     }
 
     @include respond(phone-l-big){
@@ -42,4 +42,10 @@ html{
 }
 body{
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){
+        padding: 0;
+
+    }
 }

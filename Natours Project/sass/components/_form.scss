@@ -44,12 +44,11 @@
     &__label{
         font-size: 1.2rem;
         font-weight: 600;
-        display: block;
+        display: inline-block;
         margin-left: 2rem;
         margin-top: .7rem;
         transition: all .5s;
         cursor: pointer;
-        width: 16%;
     }
 
     &__input:placeholder-shown + &__label{
@@ -61,6 +60,11 @@
     &__radio-group{
         width: 49%;
         display: inline-block;
+
+        @include respond(tab-port){
+            width: 100%;
+            margin-bottom: 2rem;
+        }
     }
 
     &__radio-input{
