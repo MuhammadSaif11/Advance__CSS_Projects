@@ -7,7 +7,13 @@
     flex: 0 0 40%;
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
+
+    @media only screen and (max-width: $bp-smallest){
+        flex: 0 0 100%;
+        order:1;
+    }
 
     &__input{
         font-family: inherit;
@@ -19,7 +25,7 @@
         padding: .7rem 2rem;
         transition: all .2s;
         background-color: var(--color-grey-light-2);
-        margin-right: -3.5rem;
+        // margin-right: -3.5rem;
 
 
         &:focus{
@@ -36,15 +42,21 @@
 
     &__input:focus + &__button{
         background-color: var(--color-grey-light-3);
+        right: 1%;
     }
 
     &__button{
         background-color: var(--color-grey-light-2);
+        position: absolute;
+        top: 50%;
+        right: 6%;
+        transform: translate(-50%, -50%);
         cursor: pointer;
         border: none;
+        transition: all .2s;
 
         &:active{
-            transform: translateY(2px);
+            transform: translate(-50%, -50%) translateY(3px);
         }
 
     }
@@ -108,14 +120,24 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and (max-width: $bp-medium){
+        display: flex;
+        margin-top: 0;
+    }
+
     &__item{
         position: relative;
 
         &:not(:last-child){
             margin-bottom: .5rem;
+            @media only screen and (max-width: $bp-medium){
+                margin-bottom: 0;
+            }
         }
-
-
+        @media only screen and (max-width: $bp-medium){
+            flex: 1;
+        }
+        
     }
 
     &__item::before{
@@ -142,8 +164,6 @@
 
     &__link:link,
     &__link:visited{
-
-        display: block;
         color: var(--color-grey-light-1);
         text-decoration: none;
         text-transform: uppercase;
@@ -154,6 +174,15 @@
         z-index: 10;
         // transition: transform .2s .2s;
 
+        @media only screen and (max-width: $bp-medium){
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small){
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        }    
     }
 
     // &__item:hover &__link{
@@ -165,6 +194,13 @@
         height: 1.75rem;
         fill: currentColor;
         margin-right: 2rem;
+
+        @media only screen and (max-width: $bp-small){
+            margin-right: 0;
+            margin-bottom: .7rem;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
     }
 }
 
@@ -173,6 +209,10 @@
     padding: 2.5rem;
     color: var(--color-grey-light-4);
     text-align: center;
+
+    @media only screen and (max-width: $bp-medium){
+        display: none;
+    }
 }
 
 .gallery{
@@ -196,6 +236,11 @@
         font-weight: 300;
         padding: 1.5rem 3rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars{
@@ -231,12 +276,20 @@
         justify-content: center;
         align-items: center;
         color: #fff;
+
+        @media only screen and (max-width: $bp-small){
+            padding: 0 1.5rem;
+        }
     }
 
 
     &__rating-count{
         font-size: .8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: .5rem;
+        }
 
 
 
@@ -247,6 +300,10 @@
         margin-bottom: -3px;
         font-size: 2.25rem;
         font-weight: 300;
+
+        @media only screen and (max-width: $bp-small){
+            font-size: 1.8rem;
+        }
 
 
     }
@@ -348,8 +405,11 @@
 
     }
 
-    &__photo{
+    &__friends{
+        display: flex;
+    }
 
+    &__photo{
         height: 4rem;
         width: 4rem;
         border-radius: 100%;
@@ -367,6 +427,11 @@
     background-color: #fff;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium){
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text{
         margin-bottom: 2rem;
@@ -427,6 +492,10 @@
     padding: 3.5rem 0;
     text-align: center;
     background-color: #fff;
+
+    @media only screen and (max-width: $bp-medium){
+        padding: 2.5rem 0;
+    }
 
     &__book-now{
         font-size: 2rem;
